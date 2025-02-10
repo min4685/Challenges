@@ -1,1 +1,1 @@
-# Challenge
+# 2025 Gamja Hack CTF Challenges
