@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>hide and seek</title>
+   <style>
+       @font-face {
+           font-family: 'NeoDunggeunmo';
+           src: url('../static/fonts/NeoDunggeunmoPro-Regular.ttf') format('truetype');
+       }
+    
+        h1 {
+            font-weight: normal;
+        }
+
+       body {
+           margin: 0;
+           padding: 0;
+           height: 100vh;
+           background-color: #111827;
+           color: white;
+           font-family: 'NeoDunggeunmo', Arial, sans-serif;
+       }
+
+       .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #111111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+            
+        .center-tabs {
+            display: flex;
+            justify-content: center;
+            width: 60%;
+            height: 100%;
+        }
+            
+        .nav-tab {
+            color: white;
+            text-decoration: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            width: 20%;
+            justify-content: center;
+        }
+            
+        .home-tab, .submit-tab {
+            color: white;
+            text-decoration: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+            
+        .nav-tab:hover, .home-tab:hover, .submit-tab:hover {
+            background-color: #444444;
+        }
+
+        .content {
+            margin-top: 50px;
+            height: calc(100vh - 50px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="/" class="home-tab">Home</a>
+        <div class="center-tabs">
+            <a href="/1" class="nav-tab">1</a>
+            <a href="/2" class="nav-tab">2</a>
+            <a href="/3" class="nav-tab">3</a>
+        </div>
+        <a href="/exit" class="submit-tab">Exit</a>
+    </div>
+    <div class="content">
+        <div class="clue-container" style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+            <div class="input-group" style="display: flex; align-items: center; gap: 10px;">
+                <span>[1]</span>
+                <input type="text" id="clue1" style="background-color: #374151; border: none; padding: 8px; color: white; border-radius: 5px;">
+            </div>
+            <div class="input-group" style="display: flex; align-items: center; gap: 10px;">
+                <span>[2]</span>
+                <input type="text" id="clue2" style="background-color: #374151; border: none; padding: 8px; color: white; border-radius: 5px;">
+            </div>
+            <div class="input-group" style="display: flex; align-items: center; gap: 10px;">
+                <span>[3]</span>
+                <input type="text" id="clue3" style="background-color: #374151; border: none; padding: 8px; color: white; border-radius: 5px;">
+            </div>
+            <button onclick="submitClues()" style="background-color: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Submit</button>
+        </div>
+     </div>
+     <script src="{{ url_for('static', filename='js/exit.js') }}"></script>
+</body>
+</html>
